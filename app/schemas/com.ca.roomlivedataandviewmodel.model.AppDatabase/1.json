@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ccd96fe552bec92ac66bed896da64dfb",
+    "entities": [
+      {
+        "tableName": "BorrowModel",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `itemName` TEXT, `personName` TEXT, `borrowDate` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemName",
+            "columnName": "itemName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "personName",
+            "columnName": "personName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "borrowDate",
+            "columnName": "borrowDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"ccd96fe552bec92ac66bed896da64dfb\")"
+    ]
+  }
+}
